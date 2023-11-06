@@ -1,0 +1,6 @@
+framework module iMFADTV {
+  umbrella header "iMFADTV.h"
+
+  export *
+  module * { export * }
+}
