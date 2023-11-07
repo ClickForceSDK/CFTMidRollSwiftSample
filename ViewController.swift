@@ -9,7 +9,7 @@ import UIKit
 import iMFADTV
 import AVKit
 
-var preroll: MFPreRollView?
+var midroll: MFPreRollView?
 let kContentURLString: String = "https://v.holmesmind.com/1151/video/output/s_f96434d0f311f12bdcf5145796985719.mp4"
 var contentPlayerViewController = AVPlayerViewController.init()
 
@@ -25,10 +25,10 @@ class ViewController: UIViewController {
     }
     
     func setMidRoll(){
-        preroll = MFPreRollView.init(frame: self.view.frame)
-        preroll?.setZoneID("18379", get: self)
-        preroll?.delegate = self;
-        preroll?.setPlayer()
+        midroll = MFPreRollView.init(midRollFrame: contentPlayerViewController)
+        midroll?.setZoneID("18379", get: self)
+        midroll?.delegate = self;
+        midroll?.setPlayer()
     }
     
     func setupContentPlayer() {
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
 
 extension ViewController: MFPreRollDelegate {
     func readyPlayVideo() {
-        print("MidRoll end, start you'r videp.")
+        print("MidRoll end, start you'r video.")
     }
     
     func onFailedToVast() {
